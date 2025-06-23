@@ -214,6 +214,7 @@ button:hover{
     font-size: 12px;
     color: var(--dark-color);
     font-weight: 500;
+    margin-bottom: 10px;
 }
 #btn-alert{
     position: absolute;
