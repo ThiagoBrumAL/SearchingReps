@@ -1,0 +1,93 @@
+/* Responsivity max - 820px */
+@media (max-width: 900px) {
+    body{
+        overflow-x: hidden;
+    }
+    main{
+        flex-direction: column;
+        height: 100dvh;
+    }
+    .sec-1{
+        width: 100vw;
+        height: 50dvh;
+        border: none;
+    }
+    .fa-github{
+        font-size: 70px;
+    }
+    .content-logo h4{
+        font-size: 18px;
+    }
+    .sec-2{
+        width: 100vw;
+        height: 50dvh;
+        border-left: none;
+        border-right: none;
+    }
+    #name{
+        width: 85vw;
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    #send{
+        width: 85vw;
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    .hidden{
+        margin: 0;
+        width: 85vw;
+        max-width: 90vw;
+    }
+    .card{
+        padding: 8px;
+        height: 150px;
+        gap: 36px;
+    }
+    #url{
+        font-size: 10px;
+        padding: 3px;
+        margin-bottom: 8px;
+    }
+    .mode{
+        padding: 10px;
+        font-size: 12px;
+        left: 80%;
+    }
+    .circle{
+        width: 10px;
+        height: 10px;
+    }
+    .content-language{
+        gap:5px;
+    }
+    #title-lang{
+        font-size: 12px;
+    }
+    #title-rep{
+        font-size: 12px;
+    }
+    #status{
+        font-size: 12px;
+    }
+    #date{
+        font-size: 12px;
+    }
+    .card-manipulation:nth-child(2){
+        flex-direction: column;
+    }
+    .loading{
+        height: 50dvh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .circle-loading{
+        background-color: var(--white-color);
+    }
+    .alert{
+        width: 80%;
+    }
+
+}
+

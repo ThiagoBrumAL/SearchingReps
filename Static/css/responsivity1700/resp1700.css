@@ -1,0 +1,88 @@
+@media (min-width: 1700px) {
+    .sec-1{
+        width: 50vw;
+        height: 100dvh;
+    }
+    .fa-github{
+        font-size: 120px;
+    }
+    .content-logo h4{
+        font-size: 42px;
+    }
+    .sec-2{
+        width: 50vw;
+        height: 100dvh;
+    }
+    #name{
+        width: 80%;
+        padding: 20px 25px;
+        font-size: 17px;
+    }
+    #send{
+        width: 80%;
+        padding: 20px 25px;
+        font-size: 17px;
+    }
+    .hidden{
+        margin: 0;
+        width: 80%;
+        max-width: 90vw;
+    }
+    .card{
+        padding: 12px;
+        height: 185px;
+        gap: 36px;
+    }
+    #url{
+        font-size: 16px;
+        padding: 3px;
+        margin-bottom: 14px;
+    }
+    .mode{
+        padding: 14px;
+        font-size: 18px;
+        right: 5%;
+    }
+    .circle{
+        width: 18px;
+        height: 18px;
+    }
+    .content-language{
+        gap:5px;
+    }
+    #title-lang{
+        font-size: 16px;
+    }
+    #title-rep{
+        font-size: 16px;
+    }
+    #status{
+        font-size: 16px;
+    }
+    #date{
+        font-size: 16px;
+    }
+    .card-manipulation:nth-child(2){
+        flex-direction: column;
+    }
+    .loading{
+        height: 100dvh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .circle-loading{
+        background-color: var(--white-color);
+        width: 15px;
+    }
+    .note{
+        font-size: 20px;
+    }
+    .p-alert{
+        font-size: 18px;
+    }
+    #btn-alert{
+        font-size: 18px;
+        padding: 5px 15px;
+    }
+}
