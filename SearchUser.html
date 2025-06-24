@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>SearchUser</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+        :root{
+            --dark-color:  oklch(16.353% 0.03731 266.929);
+            --dark-color-plus:  oklch(10.562% 0.02343 254.371);
+            --white-color: #FFFAFE;
+            --border-color: oklch(55.2% 0.016 285.938);
+            --url-hover: oklch(70.5% 0.015 286.067);
+            --card-color: oklch(20.064% 0.0305 274.689);
+            --color-title-active: oklch(62.3% 0.214 259.815);
+            --color-shadow-active: oklch(87.2% 0.01 258.338);
+            --color-border: oklch(74.799% 0.12064 251.08);
+            --color-border-alert: oklch(45.013% 0.05809 269.06);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            max-height: 100dvh;
+            font-family: "Noto Sans", sans-serif;
+        }
+        main{
+            display: flex;
+            height: 100dvh;
+        }
+        section{
+            width: 50vw;
+        }
+        .sec-1{
+            background-color: var(--white-color);
+        }
+        .sec-1{
+            position: relative;
+            width: 50vw;
+            border-right: 14px solid var(--dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+        }
+        #name{
+            padding: 15px;
+            border: 2px solid var(--dark-color);
+            border-radius: 4px;
+            width: 400px;
+            margin-bottom: 5px;
+            background-color: var(--white-color);
+            font-size: 14px;
+        }
+        #send{
+            width: 400px;
+            padding: 15px;
+        }
+        .content-logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content-logo h4{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .fa-github{
+            font-size: 120px;
+        }
+        .sec-2{
+            background-color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content-user{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 90dvh;
+            border: 2px solid var(--white-color);
+            border-radius: 6px;
+            padding: 20px;
+            position: relative;
+        }
+        .picture{
+            background-color: #FFFAFE;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            align-self: start;
+            justify-content: start;
+            margin-bottom: 20px;
+            position: absolute;
+            left: 25px;
+        }
+        
+        .name-user,.id-user, .company-user{
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            width: 90%;
+            border: 1px solid var(--color-title-active);
+            font-size: 14px;
+            border-radius: 6px;
+            color: var(--white-color);
+            background-color: var(--dark-color);
+        }
+
+        button{
+            position: relative;
+            z-index: 1;
+            color: var(--dark-color);
+            font-weight: 700;
+            font-family: "Noto Sans", sans-serif;
+            border: 2px solid var(--dark-color);
+            border-radius: 4px;
+            background-color: var(--white-color);
+            font-size: 14px;
+        }
+        button::before{
+            content: '';
+            left: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 0%;
+            background-color: var(--dark-color);
+            position: absolute;
+            z-index: -1;
+            transition: all .50s ease;
+        }
+        button:hover::before{
+            width: 100%;
+        }
+        button:hover{
+            color: var(--white-color);
+            cursor: pointer;
+            border: 2px solid var(--dark-color);
+        }
+        .note{
+            top: 20px;
+            left: 5%;
+            position: absolute;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--dark-color);
+        }
+        .note:hover{
+            cursor: pointer;
+        }
+        /*Test*/
+
+        label{
+            color: var(--color-title-active);
+            background-color: var(--dark-color);
+            position: absolute;
+            font-size: 12px;
+            left: 35px;
+            top: 0;
+        }
+        .test{
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            height: 90px;
+            justify-content: center;
+            align-items: center;
+        }
+        .content-user-top{
+            display: flex;
+            gap: 20px;
+            width: 90%;
+            right: 10px;
+            justify-content: flex-end;
+            margin-bottom: 60px;
+        }
+        .container-followers,.container-following{
+            width: 90px;
+            height: 80px;
+            border-radius: 4px;
+            border: 1px solid var(--white-color);
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+        #just-space{
+            display: flex;
+            width: auto;
+            gap: 20px;
+        }
+        #title{
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            background-color: var(--white-color);
+            text-align: center;
+            font-size: 14px;
+            margin: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            line-height: 24px;
+        }
+        #follwers,#following{
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 18px;
+            align-self: center;
+            color: var(--white-color);
+        }
+        #see-perfil{
+            width: 90%;
+            padding: 20px 0;
+        }
+        #see-perfil:hover{
+            border: 2px solid var(--white-color);
+        }
+    </style>
+</head>
+    <body>
+        <main>
+            <section class="sec-1">
+                <div class="note">Note</div>
+                <div class="content-logo">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>Github Api Find Users</h4>
+                </div>
+                <input type="text" placeholder="Enter with name:" id="name">
+                <button id="send">Send&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+            </section>
+            <section class="sec-2">
+            </section>
+        </main>
+    </body>
+    <script type="module" src="static/js/Users/SearchUser.js"></script>
+</html>

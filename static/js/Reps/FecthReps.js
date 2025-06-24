@@ -1,11 +1,9 @@
-const hidden = document.querySelector(".hidden");
-const input = document.getElementById("name");
-const sec2 = document.querySelector(".sec-2");
-const statusRep = {
+
+export const statusRep = {
     false:"public",
     true:"private"
 }
-const colorsLang = {
+export const colorsLang = {
     JavaScript: "oklch(90.5% 0.182 98.111)",
     HTML: "oklch(64.5% 0.246 16.439)",
     CSS: "oklch(67.3% 0.182 276.935)",
@@ -16,16 +14,7 @@ const colorsLang = {
     Default: "oklch(70.4% 0.04 256.788)"
 }
 
-const send = document.getElementById("send");
-
-input.addEventListener("keydown", (e) => {
-    if(e.key === 'Enter' ){
-        send.click();
-    }
-})
-
-function getApi(){
-
+export function fetchReps(input, hidden, sec2, moDe, createBtn){
     hidden.innerHTML = "";
     const load = document.createElement('div');
     load.classList.add("loading");
@@ -79,14 +68,7 @@ function getApi(){
                     hidden.appendChild(card);
 
                     if(!document.querySelector(".mode")){
-                        const btn = document.createElement("button");
-                        const icon = document.createElement("i");
-
-                        btn.classList.add("mode")
-                        icon.classList.add("fa-solid","fa-sun");
-                        btn.appendChild(icon);
-                        document.querySelector(".sec-1").appendChild(btn);
-                        btn.addEventListener("click",moDe);
+                        createBtn();
                     }
                 }else{
                     const card = document.createElement("div");
@@ -117,60 +99,9 @@ function getApi(){
                     hidden.appendChild(card);
 
                     if(!document.querySelector(".mode")){
-                        const btn = document.createElement("button");
-                        const icon = document.createElement("i");
-
-                        icon.classList.add("fa-solid","fa-sun");
-                        btn.appendChild(icon);
-                        btn.classList.add("mode");
-                        btn.addEventListener("click", moDe);
-                        document.querySelector(".sec-1").appendChild(btn);
+                        createBtn();
                     }
                 }
             });
         })
-}
-function moDe(event){
-    const mode = event.currentTarget;
-    const currentIcon = mode.querySelector("i");
-    const isSun = currentIcon.classList.contains("fa-moon");
-    
-    mode.innerHTML = "";
-
-    const i = document.createElement("i");
-    i.classList.add("fa-solid");
-
-    i.classList.add("fa-solid",isSun ? "fa-sun":"fa-moon")
-
-    const card = document.querySelectorAll(".card");
-    const title = document.querySelectorAll("#title-rep");
-    const titleLang = document.querySelectorAll("#title-lang");
-    const date = document.querySelectorAll("#date");
-    const url = document.querySelectorAll("#url");
-
-    card.forEach((item) => {item.classList.toggle("active")});
-    title.forEach((item) => {item.classList.toggle("active")});
-    titleLang.forEach((item) => {item.classList.toggle("active")});
-    date.forEach((item) => {item.classList.toggle("active")});
-    url.forEach((item) => {item.classList.toggle("active")});
-    mode.appendChild(i);
-}
-
-const note = document.querySelector(".note");
-const main = document.querySelector("main");
-const btnAlert = document.getElementById("btn-alert");
-
-note.addEventListener("click", ()=>{
-    showAlert();
-})
-btnAlert.addEventListener("click", ()=>{
-    showAlert();
-})
-
-function showAlert(){
-    let myalert = document.querySelector(".alert");
-    myalert.classList.toggle("active");
-    main.classList.toggle("active");
-    input.disabled = !input.disabled;
-    send.classList.toggle("active");
 }

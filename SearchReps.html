@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/main/style.css">
-    <link rel="stylesheet" href="static/css/responsivity820/resp820.css">
-    <link rel="stylesheet" href="static/css/responsivity1700/resp1700.css">
+    <link rel="stylesheet" href="static/css/Reps/main/style.css">
+    <link rel="stylesheet" href="static/css/Reps/responsivity1700/resp1700.css">
+    <link rel="stylesheet" href="static/css/Reps/responsivity820/resp820.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>SerchReps</title>
 </head>
@@ -23,7 +22,7 @@
                     <h4>Github Api Repositorys</h4>
                 </div>
                 <input type="text" placeholder="Enter with name:" id="name">
-                <button onclick="getApi()">Send&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+                <button id="send">Send&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
             </section>
             <section class="sec-2">
                 <div class="hidden">
@@ -31,5 +30,5 @@
             </section>
         </main>
     </body>
-    <script src="static/js/index.js"></script>
+    <script type="module" src="static/js/Reps/SearchReps.js"></script>
 </html>
