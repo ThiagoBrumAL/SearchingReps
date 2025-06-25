@@ -7,6 +7,7 @@ const send = document.getElementById("send");
 const note = document.querySelector(".note");
 const main = document.querySelector("main");
 const btnAlert = document.getElementById("btn-alert");
+const exit = document.getElementById("exit");
 
 send.addEventListener("click", ()=>[
     fetchReps(input, hidden, sec2, moDe, createBtn)
@@ -65,3 +66,8 @@ function showAlert(){
     input.disabled = !input.disabled;
     send.classList.toggle("active");
 }
+
+exit.addEventListener("click", () => {
+    const sideBar = document.querySelector(".side-bar");
+    sideBar.classList.toggle("active");
+})

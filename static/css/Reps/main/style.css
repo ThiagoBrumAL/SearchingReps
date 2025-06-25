@@ -2,6 +2,7 @@
 
 :root{
     --dark-color:  oklch(16.353% 0.03731 266.929);
+    --dark-color-plus:  oklch(10.562% 0.02343 254.371);
     --white-color: #FFFAFE;
     --border-color: oklch(55.2% 0.016 285.938);
     --url-hover: oklch(70.5% 0.015 286.067);
@@ -10,6 +11,7 @@
     --color-shadow-active: oklch(87.2% 0.01 258.338);
     --color-border: oklch(74.799% 0.12064 251.08);
     --color-border-alert: oklch(45.013% 0.05809 269.06);
+    --side-color: #ede7eb;
 }
 
 ::-webkit-scrollbar{
@@ -19,6 +21,59 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.side-bar{
+    width: 250px;
+    position: fixed;
+    height: 100dvh;
+    background-color: var(--side-color);
+    z-index: 100;
+    left: -250px;
+    transition: all .50s ease;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+}.side-bar ul{
+    list-style: none;
+    margin-top: 70px;
+    padding: 0 20px;
+}.side-bar ul li a{
+    font-size: 16px;
+    color: var(--dark-color-plus);
+    text-decoration: none;
+    position: relative;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+}.side-bar ul li a::before{
+    content: '';
+    height: 100%;
+    width: 0%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--dark-color-plus);
+    z-index: -99;
+    position: absolute;
+    transition: all .50s ease;
+}.side-bar ul li a:hover::before{
+    width: 100%;
+}.side-bar ul li a:hover{
+    color: var(--white-color);
+}
+.exit{
+    font-size: 18px;
+    top: 20px;
+    right: 120px;
+    position: absolute;
+    transition: all .50s ease;
+}
+.exit:hover{
+    transform: rotate(-360deg);
+    cursor: pointer;
+}
+.side-bar.active{
+        left: 0;
 }
 body{
     height: 100dvh;
@@ -36,7 +91,7 @@ main.active{
 .sec-1{
     position: relative;
     width: 50vw;
-    border-right: 14px solid var(--dark-color);
+    border-right: 14px solid var(--dark-color-plus);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +163,7 @@ button:hover{
 .sec-2{
     width: 50vw;
     position: relative;
-    background-color: var(--dark-color);
+    background-color: var(--dark-color-plus);
     color: var(--white-color);
     display: flex;
     justify-content: center;
@@ -275,3 +330,4 @@ button:hover{
         
     }
 }
+

@@ -59,7 +59,7 @@ export function FecthUser(input){
 
             fields.forEach((item) => {
                 const wrapper = document.createElement("div");
-                wrapper.classList.add("test");
+                wrapper.classList.add("field");
 
                 const label = document.createElement("label");
                 label.innerText = item.label;
@@ -77,11 +77,11 @@ export function FecthUser(input){
             btn.innerHTML = `See Perfil &nbsp;<i class="fa-solid fa-magnifying-glass"></i>`;
 
             btn.addEventListener("click", ()=>{
-                window.open(data.url);
+                window.open(data.html_url);
             })
 
             contentUser.prepend(contentUserTop);
-            contentUser.append(btn);
+            contentUser.appendChild(btn);
             sec2.appendChild(contentUser);
         })
 } 
