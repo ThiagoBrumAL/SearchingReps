@@ -6,6 +6,7 @@ const note = document.querySelector(".note");
 const btnAlert = document.getElementById("btn-alert");
 const main = document.querySelector("main");
 const exit = document.getElementById("exit");
+const searchReps = document.getElementById("searchReps");
 
 send.addEventListener("click", ()=>{
     FecthUser(input.value);
@@ -27,4 +28,26 @@ function showAlert(){
 exit.addEventListener("click", () => {
     const sideBar = document.querySelector(".side-bar");
     sideBar.classList.toggle("active");
+})
+
+
+searchReps.addEventListener("click", () => {
+    
+    const body = document.querySelector("body");
+    body.innerHTML = "";
+    const load = document.createElement('div');
+    load.classList.add("loading");
+    load.innerHTML = `
+        <div class="loading">
+            <div class="circle-loading one"></div>
+            <div class="circle-loading two"></div>
+            <div class="circle-loading tree"></div>
+            <div class="circle-loading four"></div>
+        </div>
+    `
+    body.appendChild(load);
+
+    setInterval(()=>{
+        window.location.href = "SearchReps.html";
+    },3000);
 })

@@ -59,6 +59,7 @@
 }.side-bar ul li a:hover::before{
     width: 100%;
 }.side-bar ul li a:hover{
+    cursor: pointer;
     color: var(--white-color);
 }
 .exit{
@@ -314,6 +315,13 @@ button:hover{
     width: 8px;
     height: 20px;
     background-color: var(--white-color);
+    border-radius: 9999px;
+    animation: load 1s infinite linear;
+}
+.circle-loading2{
+    width: 8px;
+    height: 20px;
+    background-color: var(--dark-color-plus);
     border-radius: 9999px;
     animation: load 1s infinite linear;
 }

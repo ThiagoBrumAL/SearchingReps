@@ -8,6 +8,7 @@ const note = document.querySelector(".note");
 const main = document.querySelector("main");
 const btnAlert = document.getElementById("btn-alert");
 const exit = document.getElementById("exit");
+const searchuser = document.getElementById("searchuser");
 
 send.addEventListener("click", ()=>[
     fetchReps(input, hidden, sec2, moDe, createBtn)
@@ -70,4 +71,25 @@ function showAlert(){
 exit.addEventListener("click", () => {
     const sideBar = document.querySelector(".side-bar");
     sideBar.classList.toggle("active");
+})
+
+searchuser.addEventListener("click", () => {
+    
+    const body = document.querySelector("body");
+    body.innerHTML = "";
+    const load = document.createElement('div');
+    load.classList.add("loading");
+    load.innerHTML = `
+        <div class="loading">
+            <div class="circle-loading2 one"></div>
+            <div class="circle-loading2 two"></div>
+            <div class="circle-loading2 tree"></div>
+            <div class="circle-loading2 four"></div>
+        </div>
+    `
+    body.appendChild(load);
+
+    setInterval(()=>{
+        window.location.href = "SearchUser.html";
+    },3000);
 })
